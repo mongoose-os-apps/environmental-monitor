@@ -1,0 +1,34 @@
+author: Ben Rockwood <benr@cuddletech.com>
+description: Environmental Monitor using a BME280 Sensor & SSD1306 OLED
+version: 1.0
+
+libs_version: ${mos.version}
+modules_version: ${mos.version}
+mongoose_os_version: ${mos.version}
+
+filesystem:
+  - fs
+
+libs:
+    # common mgos libs
+  - origin: https://github.com/mongoose-os-libs/ca-bundle
+  - origin: https://github.com/mongoose-os-libs/i2c
+  - origin: https://github.com/mongoose-os-libs/rpc-service-config
+  - origin: https://github.com/mongoose-os-libs/rpc-service-fs
+  - origin: https://github.com/mongoose-os-libs/rpc-uart
+  - origin: https://github.com/mongoose-os-libs/spi
+
+    # libs necessary for the current app
+  - origin: https://github.com/mongoose-os-libs/arduino-adafruit-ssd1306
+  - origin: https://github.com/mongoose-os-libs/arduino-adafruit-bme280
+  - origin: https://github.com/mongoose-os-libs/mjs
+
+config_schema:
+  - ["i2c.enable", true]
+
+tags:
+  - js
+  - arduino
+  - hw
+
+manifest_version: 2017-05-18
